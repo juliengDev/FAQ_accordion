@@ -16,23 +16,37 @@ class AccordionComponent {
   private init(): void {
     this.accordion.addEventListener("click", this.handleAccordionClick);
     this.initPanels();
+    this.openFirstAccordion(); // Nouvelle méthode pour ouvrir le premier accordion
   }
 
   private initPanels(): void {
-    this.buttons.forEach((btn) => {
+    this.buttons.forEach((btn, index) => {
       const panelId = btn.getAttribute("aria-controls");
       if (!panelId) return;
       const panel = document.getElementById(panelId);
       if (!panel) return;
 
-      if (btn.getAttribute("aria-expanded") === "false") {
-        panel.classList.remove("visible");
-        panel.style.maxHeight = "0px";
-      } else {
-        panel.classList.add("visible");
-        panel.style.maxHeight = panel.scrollHeight + "px";
+      // Par défaut, tous les panels sont fermés
+      btn.setAttribute("aria-expanded", "false");
+      panel.classList.remove("visible");
+      panel.style.maxHeight = "0px";
+      panel.setAttribute("aria-hidden", "true");
+
+      // Cacher l'icône minus et afficher l'icône plus
+      const iconPlus = btn.querySelector(".icon-plus") as HTMLImageElement;
+      const iconMinus = btn.querySelector(".icon-minus") as HTMLImageElement;
+      if (iconPlus && iconMinus) {
+        iconPlus.classList.remove("hidden");
+        iconMinus.classList.add("hidden");
       }
     });
+  }
+
+  private openFirstAccordion(): void {
+    if (this.buttons.length > 0) {
+      const firstButton = this.buttons[0];
+      this.toggleAccordion(firstButton, true);
+    }
   }
 
   private handleAccordionClick = (event: Event): void => {
