@@ -62,7 +62,6 @@ class AccordionComponent {
       panel.setAttribute("aria-hidden", "true");
     }
 
-    // Gestion des icônes
     const iconPlus = button.querySelector(".icon-plus") as HTMLImageElement;
     const iconMinus = button.querySelector(".icon-minus") as HTMLImageElement;
 

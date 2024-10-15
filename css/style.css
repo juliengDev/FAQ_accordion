@@ -258,6 +258,11 @@ main {
   display: flex;
   width: 100%;
   gap: 2.4rem;
+  transition: color 300ms ease;
+}
+.accordion__container__question:hover {
+  color: var(--color-Pink);
+  cursor: pointer;
 }
 .accordion__container__question button {
   margin-left: auto;
