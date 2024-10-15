@@ -12,11 +12,26 @@
   
   */
 
+@font-face {
+  font-family: "Work Sans";
+  src: url("/public/fonts/WorkSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Work Sans";
+  src: url("/public/fonts/WorkSans-Italic-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
 body {
-  font-family: "Verdana", sans-serif;
-  background-color: var(--color-snow);
-  color: var(--color-dark-charcoal);
+  font-family: "Work Sans", sans-serif;
+  background-color: var(--color-Cod-Grey);
+  color: var(--color-Dark-Purple);
+  font-style: normal;
   font-weight: 400;
   line-height: 1.4;
-  font-size: 1.4rem;
+  font-optical-sizing: auto;
 }

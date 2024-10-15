@@ -17,13 +17,11 @@ ORDER: Base + typography > general layout + grid > page layout > components
 1em = 16px
 */
 :root {
-  --color-dark-charcoal: #312e2c;
-  --color-dark-raspberry: #7a284e;
-  --color-brandy-red: #854632;
-  --color-wenge-brown: #5f564d;
-  --color-eggshell: #f3e5d7;
-  --color-white-coffee: #e3ddd7;
-  --color-snow: #fff7fb;
+  --color-Dark-Purple: #301534;
+  --color-Cod-Grey: #1e1e1e;
+  --color-Pink: #ad28eb;
+  --color-Light-Pink: #f8eeff;
+  --color-Pale-Purple: #8b6990;
   --color-pure-white: #ffffff;
 }
 
@@ -53,7 +51,7 @@ a:hover,
 a:active {
   text-decoration: none;
   color: inherit;
-  cursor: auto; /* or pointer if you want to keep the default hand cursor */
+  cursor: pointer; /* or pointer if you want to keep the default hand cursor */
 }
 
 /*
@@ -76,13 +74,26 @@ FONT SIZE SYSTEM (px)
 	•	900 : Black (Heavy)
 
   */
+@font-face {
+  font-family: "Work Sans";
+  src: url("/public/fonts/WorkSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Work Sans";
+  src: url("/public/fonts/WorkSans-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
 body {
-  font-family: "Verdana", sans-serif;
-  background-color: var(--color-snow);
-  color: var(--color-dark-charcoal);
+  font-family: "Work Sans", sans-serif;
+  background-color: var(--color-Cod-Grey);
+  color: var(--color-Dark-Purple);
+  font-style: normal;
   font-weight: 400;
   line-height: 1.4;
-  font-size: 1.4rem;
+  font-optical-sizing: auto;
 }
 
 .centered-div {
@@ -112,17 +123,6 @@ body {
   align-items: center;
 }
 
-.hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
 button {
   border: none;
   margin: 0;
@@ -146,18 +146,157 @@ button {
   border-radius: 4px;
 }
 
+#app {
+  background-color: var(--color-Light-Pink);
+  height: 100dvh;
+}
+
 .attribution {
-  margin: 1.6rem 0 6rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 100px;
   font-size: 1.1rem;
   text-align: center;
-  color: var(--color-dark-charcoal);
+  color: var(--color-Cod-Grey);
 }
 .attribution__credit {
   font-weight: 800;
-  color: var(--color-dark-raspberry) !important;
+  color: purple !important;
 }
 .attribution a {
   cursor: pointer;
+}
+
+.background-image {
+  background-image: url("/public/images/background-pattern-mobile.svg");
+  background-size: cover;
+  background-position: center;
+  min-height: 232px;
+}
+@media only screen and (min-width: 56.25em) {
+  .background-image {
+    background-image: url("/public/images/background-pattern-desktop.svg");
+    min-height: 320px;
+  }
+}
+
+main {
+  margin: -89.5px auto;
+  max-width: 37.5rem;
+}
+@media only screen and (min-width: 56.25em) {
+  main {
+    max-width: 60rem;
+    margin: -152.5px auto;
+  }
+}
+
+.faq {
+  width: 100%;
+  border-radius: 16px;
+  background-color: white;
+  padding: 2.4rem;
+}
+@media only screen and (min-width: 56.25em) {
+  .faq {
+    padding: 4rem;
+  }
+}
+.faq__header {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+@media only screen and (min-width: 56.25em) {
+  .faq__header {
+    margin-bottom: 3.2rem;
+  }
+}
+.faq__header img {
+  width: 21px;
+  height: 21px;
+}
+@media only screen and (min-width: 56.25em) {
+  .faq__header img {
+    width: 35px;
+    height: 35px;
+  }
+}
+.faq__header h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+@media only screen and (min-width: 56.25em) {
+  .faq__header h1 {
+    font-size: 5.6rem;
+  }
+}
+
+.accordion > *:not(:last-child) {
+  margin-bottom: 4.1rem;
+}
+@media only screen and (min-width: 56.25em) {
+  .accordion > *:not(:last-child) {
+    margin-bottom: 5.35rem;
+  }
+}
+.accordion__container {
+  transition: all 300ms ease;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+@media only screen and (min-width: 56.25em) {
+  .accordion__container {
+    font-size: 1.8rem;
+  }
+}
+.accordion__container__question {
+  display: flex;
+  width: 100%;
+  gap: 2.4rem;
+}
+.accordion__container__question button {
+  margin-left: auto;
+}
+.accordion__container__question button img {
+  width: 25px;
+  height: 25px;
+}
+.accordion__container__anwser {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 300ms ease, opacity 300ms ease;
+}
+.accordion__container__anwser.visible {
+  opacity: 1;
+}
+.accordion__container__anwser__text {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--color-Pale-Purple);
+}
+@media only screen and (min-width: 56.25em) {
+  .accordion__container__anwser__text {
+    font-size: 1.6;
+  }
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  opacity: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

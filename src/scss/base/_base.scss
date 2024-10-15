@@ -1,11 +1,9 @@
 :root {
-  --color-dark-charcoal: #312e2c;
-  --color-dark-raspberry: #7a284e;
-  --color-brandy-red: #854632;
-  --color-wenge-brown: #5f564d;
-  --color-eggshell: #f3e5d7;
-  --color-white-coffee: #e3ddd7;
-  --color-snow: #fff7fb;
+  --color-Dark-Purple: #301534;
+  --color-Cod-Grey: #1e1e1e;
+  --color-Pink: #ad28eb;
+  --color-Light-Pink: #f8eeff;
+  --color-Pale-Purple: #8b6990;
   --color-pure-white: #ffffff;
 }
 
@@ -33,7 +31,7 @@ a:hover,
 a:active {
   text-decoration: none;
   color: inherit;
-  cursor: auto; /* or pointer if you want to keep the default hand cursor */
+  cursor: pointer; /* or pointer if you want to keep the default hand cursor */
 }
 
 /*
