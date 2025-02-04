@@ -16,9 +16,9 @@
     "@eslint/js": "^9.7.0",
     "@types/eslint__js": "^8.42.3",
     "eslint": "^8.57.0",
+    "gh-pages": "^6.1.1",
     "typescript": "^5.5.3",
     "typescript-eslint": "^7.16.1",
-    "vite": "^5.3.4",
-    "gh-pages": "^6.1.1"
+    "vite": "^5.3.4"
   }
 }

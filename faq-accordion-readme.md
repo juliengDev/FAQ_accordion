@@ -18,36 +18,36 @@ This project is an **interactive FAQ accordion component** that allows users to 
 
 ---
 
-## ♿️ Accessibility Focus
+## Accessibility Focus
 
 This project follows **best accessibility practices**, ensuring usability for all users:
 - **Semantic HTML5 elements** for proper document structure  
 - **ARIA attributes**:
-	- `aria-expanded` to indicate the accordion state  
-	- `aria-controls` to link buttons to corresponding content  
-	- `role="region"` to provide context to assistive technologies  
+  - `aria-expanded` to indicate the accordion state  
+  - `aria-controls` to link buttons to corresponding content  
+  - `role="region"` to provide context to assistive technologies  
 - **Keyboard-friendly navigation**:
-	- Users can open/close questions using `Enter` or `Space`  
-	- Focus is managed dynamically for smooth navigation  
+  - Users can open/close questions using `Enter` or `Space`  
+  - Focus is managed dynamically for smooth navigation  
 - **Screen reader support** with descriptive labeling  
 
 ---
 
-## 🪗 Accordion Functionality
+## Accordion Functionality
 
 The accordion is built with a **focus on usability and smooth interactions**:
 
 1. **Expand/Collapse Answers**  
-	 - Clicking a question toggles the visibility of the corresponding answer  
-	 - Only one question is open at a time for better readability  
+   - Clicking a question toggles the visibility of the corresponding answer  
+   - Only one question is open at a time for better readability  
 
 2. **Keyboard Navigation**  
-	 - Arrow keys navigate between questions  
-	 - `Enter` or `Space` expands/collapses an answer  
+   - Arrow keys navigate between questions  
+   - `Enter` or `Space` expands/collapses an answer  
 
 3. **Smooth Transitions**  
-	 - CSS animations create a **fluid opening/closing effect**  
-	 - Optimized for **performance and responsiveness**  
+   - CSS animations create a **fluid opening/closing effect**  
+   - Optimized for **performance and responsiveness**  
 
 ---
 
@@ -56,33 +56,33 @@ The accordion is built with a **focus on usability and smooth interactions**:
 #### TypeScript - Accordion Toggle Logic
 ```typescript
 const toggleAccordion = (button: HTMLButtonElement) => {
-	const content = document.getElementById(button.getAttribute("aria-controls")!);
-	const isExpanded = button.getAttribute("aria-expanded") === "true";
-	
-	button.setAttribute("aria-expanded", String(!isExpanded));
-	content?.setAttribute("aria-hidden", String(isExpanded));
+  const content = document.getElementById(button.getAttribute("aria-controls")!);
+  const isExpanded = button.getAttribute("aria-expanded") === "true";
+  
+  button.setAttribute("aria-expanded", String(!isExpanded));
+  content?.setAttribute("aria-hidden", String(isExpanded));
 };
 ```
 
 ### Accessible Accordion Markup
 ```html
 <button aria-expanded="false" aria-controls="faq1">
-	What is TypeScript?
+  What is TypeScript?
 </button>
 <div id="faq1" role="region" aria-hidden="true">
-	TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
+  TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
 </div>
 ```
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
-[FAQ Accordion Component](https://juliengdev-faq-accordion.netlify.app/)
+[FAQ Accordion Component](#)
 
 ---
 
-## 🛠 Built With
+## Built With
 
 - TypeScript for improved maintainability
 - Semantic HTML5 for structured content
@@ -93,7 +93,7 @@ const toggleAccordion = (button: HTMLButtonElement) => {
 
 ---
 
-## ✨ Continued Development
+## Continued Development
 
 Future improvements planned:
 - Multi-panel support (allowing multiple questions to stay open)
@@ -103,7 +103,7 @@ Future improvements planned:
 
 ---
 
-## 📦 Installation
+## Installation
 
 To set up the project locally, follow these steps:
 
@@ -135,19 +135,19 @@ npm run preview
 
 ---
 
-## 📚 Useful Resources
+## Useful Resources
 
-- [GitHub Repository: FAQ Accordion Component](https://github.com/juliengDev/FAQ_accordion)
+- [GitHub Repository: FAQ Accordion Component](#)
 - [MDN Web Docs on ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) - Guide to implementing ARIA for better accessibility
 - [CSS-Tricks: CSS Transitions](https://css-tricks.com/almanac/properties/t/transition/) - Learn how to create smooth animations
 - [W3C Web Accessibility Initiative (WAI)](https://www.w3.org/WAI/) - Best practices for accessible web content
 
 ---
 
-## 👨‍💻 Author
+## Author
 
-- **Portfolio** - [Julien Gilbert](https://juliengilbert.com/)
-- **GitHub** - [@juliengDev](https://github.com/juliengDev)
-- **LinkedIn** - [Julien Gilbert](https://www.linkedin.com/in/julien-gilbert-reactjs/)
+- **Portfolio** - [Julien Gilbert](#)
+- **GitHub** - [@juliengDev](#)
+- **LinkedIn** - [Julien Gilbert](#)
 
 *Feel free to reach out if you have any feedback or questions!* 🚀

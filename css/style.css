@@ -197,6 +197,7 @@ main {
   border-radius: 16px;
   background-color: white;
   padding: 2.4rem;
+  box-shadow: 0px 32px 56px 0px rgba(80, 0, 118, 0.1);
 }
 @media only screen and (min-width: 56.25em) {
   .faq {

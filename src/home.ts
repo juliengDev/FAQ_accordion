@@ -20,7 +20,7 @@ class AccordionComponent {
   }
 
   private initPanels(): void {
-    this.buttons.forEach((btn, index) => {
+    this.buttons.forEach((btn) => {
       const panelId = btn.getAttribute("aria-controls");
       if (!panelId) return;
       const panel = document.getElementById(panelId);
